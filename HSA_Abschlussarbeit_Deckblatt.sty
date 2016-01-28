@@ -1,0 +1,68 @@
+% LaTeX Package fuer Deckblatt von Abschlussarbeiten an der Hochschule Augsburg
+%
+% The MIT License (MIT)
+% Copyright (c) 2015 Andreas Dolp
+%
+% By Andreas Dolp <dev[at]andreas-dolp.de>
+% Version: v1.0 - 2016-01-28
+\ProvidesPackage{HSA_Abschlussarbeit_Deckblatt}[2016/01/28 v1.0 Package fuer Deckblatt von Abschlussarbeiten an der Hochschule Augsburg]
+\RequirePackage{geometry}	% Zur Einstellung der Seitenraender
+\RequirePackage{setspace}	% Festlegung des Zeilenabstands
+\RequirePackage{graphicx}	% Einbinden von Grafiken
+\RequirePackage{xcolor}		% Farbiger Text
+%
+\newcommand*{\thesis}[1]{\gdef\@thesis{#1}}
+\newcommand*{\@thesis}{Bachelorarbeit}
+\newcommand*{\picFacultyLogo}[1]{\gdef\@picFacultyLogo{#1}}
+\newcommand*{\course}[1]{\gdef\@course{#1}}
+\newcommand*{\@course}{course not set!}
+\newcommand*{\cooperation}[1]{\gdef\@cooperation{#1}}
+\newcommand*{\@cooperation}{cooperation not set!}
+\newcommand*{\picFacultyAddress}[1]{\gdef\@picFacultyAddress{#1}}
+\newcommand*{\authorStreet}[1]{\gdef\@authorStreet{#1}}
+\newcommand*{\authorCity}[1]{\gdef\@authorCity{#1}}
+\newcommand*{\authorPhone}[1]{\gdef\@authorPhone{#1}}
+\newcommand*{\authorMail}[1]{\gdef\@authorMail{#1}}
+\newcommand*{\supervisor}[1]{\gdef\@supervisor{#1}}
+\newcommand*{\@supervisor}{supervisor not set!}
+\newcommand*{\receivedDate}[1]{\gdef\@receivedDate{#1}}
+\newcommand*{\@receivedDate}{receivedDate not set!}
+\newcommand*{\turninDate}[1]{\gdef\@turninDate{#1}}
+\newcommand*{\@turninDate}{turninDate not set!}
+%
+\renewcommand*{\maketitle}{%
+\definecolor{HSA_orange}{HTML}{ea8409}
+\begin{titlepage}
+\singlespacing
+\newgeometry{left=20mm, right=10mm, top=12mm, bottom=12mm}
+\begin{tabular}{p{11.5cm}p{5cm}}
+	\textbf{\textcolor{HSA_orange}{\Large \@thesis}}
+		&
+	\includegraphics[width=5cm]{\@picFacultyLogo} \\
+	\vspace*{1cm}
+	\Large \@course	\\
+	\\
+	\Large \@cooperation \\
+	\vspace*{2cm}
+	\textbf{\textcolor{HSA_orange}{\Large \@author}} \\
+	\\
+	\textbf{\textcolor{HSA_orange}{\Large \@title}} \\
+	& \small{Verfasser der \@thesis:} \\
+	& \small{\@author}	\\
+	& \small{\@authorStreet}	\\
+	& \small{\@authorCity}	\\
+	& \small{\@authorPhone}	\\
+	& \small{\@authorMail}	\\
+	\\
+	& \includegraphics[width=5cm]{\@picFacultyAddress} \\
+	\vspace*{1cm}
+	\Large{Erstprüfer: \@supervisor}	\\
+	\\
+	\Large{Thema erhalten am: \@receivedDate}	\\
+	\\
+	\Large{Abgabedatum: \@turninDate} \\
+	\vspace*{\fill}
+\end{tabular}
+\end{titlepage}
+}
+\endinput
