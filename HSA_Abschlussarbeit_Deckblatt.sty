@@ -4,30 +4,30 @@
 % Copyright (c) 2015 Andreas Dolp
 %
 % By Andreas Dolp <dev[at]andreas-dolp.de>
-% Version: v1.0 - 2016-01-28
-\ProvidesPackage{HSA_Abschlussarbeit_Deckblatt}[2016/01/28 v1.0 Package fuer Deckblatt von Abschlussarbeiten an der Hochschule Augsburg]
+% Version: v1.1 - 2016-06-01
+\ProvidesPackage{HSA_Abschlussarbeit_Deckblatt}[2016/06/01 v1.1 Package fuer Deckblatt von Abschlussarbeiten an der Hochschule Augsburg]
 \RequirePackage{geometry}	% Zur Einstellung der Seitenraender
 \RequirePackage{setspace}	% Festlegung des Zeilenabstands
 \RequirePackage{graphicx}	% Einbinden von Grafiken
 \RequirePackage{xcolor}		% Farbiger Text
 %
-\newcommand*{\thesis}[1]{\gdef\@thesis{#1}}
+\newcommand*{\thesis}[1]{\def\@thesis{#1}}
 \newcommand*{\@thesis}{Bachelorarbeit}
-\newcommand*{\picFacultyLogo}[1]{\gdef\@picFacultyLogo{#1}}
-\newcommand*{\course}[1]{\gdef\@course{#1}}
+\newcommand*{\picFacultyLogo}[1]{\def\@picFacultyLogo{#1}}
+\newcommand*{\course}[1]{\def\@course{#1}}
 \newcommand*{\@course}{course not set!}
-\newcommand*{\cooperation}[1]{\gdef\@cooperation{#1}}
+\newcommand*{\cooperation}[1]{\def\@cooperation{#1}}
 \newcommand*{\@cooperation}{cooperation not set!}
-\newcommand*{\picFacultyAddress}[1]{\gdef\@picFacultyAddress{#1}}
-\newcommand*{\authorStreet}[1]{\gdef\@authorStreet{#1}}
-\newcommand*{\authorCity}[1]{\gdef\@authorCity{#1}}
-\newcommand*{\authorPhone}[1]{\gdef\@authorPhone{#1}}
-\newcommand*{\authorMail}[1]{\gdef\@authorMail{#1}}
-\newcommand*{\supervisor}[1]{\gdef\@supervisor{#1}}
+\newcommand*{\picFacultyAddress}[1]{\def\@picFacultyAddress{#1}}
+\newcommand*{\authorStreet}[1]{\def\@authorStreet{#1}}
+\newcommand*{\authorCity}[1]{\def\@authorCity{#1}}
+\newcommand*{\authorPhone}[1]{\def\@authorPhone{#1}}
+\newcommand*{\authorMail}[1]{\def\@authorMail{#1}}
+\newcommand*{\supervisor}[1]{\def\@supervisor{#1}}
 \newcommand*{\@supervisor}{supervisor not set!}
-\newcommand*{\receivedDate}[1]{\gdef\@receivedDate{#1}}
+\newcommand*{\receivedDate}[1]{\def\@receivedDate{#1}}
 \newcommand*{\@receivedDate}{receivedDate not set!}
-\newcommand*{\turninDate}[1]{\gdef\@turninDate{#1}}
+\newcommand*{\turninDate}[1]{\def\@turninDate{#1}}
 \newcommand*{\@turninDate}{turninDate not set!}
 %
 \renewcommand*{\maketitle}{%
