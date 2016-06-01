@@ -14,6 +14,7 @@
 \newcommand*{\thesis}[1]{\def\@thesis{#1}}
 \newcommand*{\@thesis}{Bachelorarbeit}
 \newcommand*{\picFacultyLogo}[1]{\def\@picFacultyLogo{#1}}
+\newcommand*{\picFacultySecLogo}[1]{\def\@picFacultySecLogo{#1}}
 \newcommand*{\course}[1]{\def\@course{#1}}
 \newcommand*{\@course}{course not set!}
 \newcommand*{\cooperation}[1]{\def\@cooperation{#1}}
@@ -43,10 +44,16 @@
 	\Large \@course	\\
 	\\
 	\Large \@cooperation \\
+\ifx \@picFacultySecLogo \undefined
+	\vspace*{2cm} \\
+\else
 	\vspace*{2cm}
+	& \vspace*{-2cm}\includegraphics[width=5cm]{\@picFacultySecLogo} \\
+\fi
 	\textbf{\textcolor{HSA_orange}{\Large \@author}} \\
 	\\
 	\textbf{\textcolor{HSA_orange}{\Large \@title}} \\
+	\vspace*{2cm} \\
 	& \small{Verfasser der \@thesis:} \\
 	& \small{\@author}	\\
 	& \small{\@authorStreet}	\\
