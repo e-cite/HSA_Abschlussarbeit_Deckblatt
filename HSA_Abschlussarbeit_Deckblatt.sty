@@ -1,10 +1,10 @@
 % LaTeX Package fuer Deckblatt von Abschlussarbeiten an der Hochschule Augsburg
 %
 % The MIT License (MIT)
-% Copyright (c) 2015 Andreas Dolp
+% Copyright (c) 2016 Andreas Dolp
 %
 % By Andreas Dolp <dev[at]andreas-dolp.de>
-% Version: v1.1 - 2016-06-01
+% Version: v1.2 - 2016-06-16
 \ProvidesPackage{HSA_Abschlussarbeit_Deckblatt}[2016/06/01 v1.1 Package fuer Deckblatt von Abschlussarbeiten an der Hochschule Augsburg]
 \RequirePackage{geometry}	% Zur Einstellung der Seitenraender
 \RequirePackage{setspace}	% Festlegung des Zeilenabstands
@@ -26,6 +26,8 @@
 \newcommand*{\authorMail}[1]{\def\@authorMail{#1}}
 \newcommand*{\supervisor}[1]{\def\@supervisor{#1}}
 \newcommand*{\@supervisor}{supervisor not set!}
+\newcommand*{\secsupervisor}[1]{\def\@secsupervisor{#1}}
+%\newcommand*{\@secsupervisor}{Second supervisor not set!}
 \newcommand*{\receivedDate}[1]{\def\@receivedDate{#1}}
 \newcommand*{\@receivedDate}{receivedDate not set!}
 \newcommand*{\turninDate}[1]{\def\@turninDate{#1}}
@@ -53,7 +55,7 @@
 	\textbf{\textcolor{HSA_orange}{\Large \@author}} \\
 	\\
 	\textbf{\textcolor{HSA_orange}{\Large \@title}} \\
-	\vspace*{2cm} \\
+	\vspace*{1cm} \\
 	& \small{Verfasser der \@thesis:} \\
 	& \small{\@author}	\\
 	& \small{\@authorStreet}	\\
@@ -62,13 +64,17 @@
 	& \small{\@authorMail}	\\
 	\\
 	& \includegraphics[width=5cm]{\@picFacultyAddress} \\
-	\vspace*{1cm}
+	\vspace*{\fill} \\
 	\Large{Erstprüfer: \@supervisor}	\\
 	\\
+\ifx \@secsupervisor \undefined
+\else
+	\Large{Zweitprüfer: \@secsupervisor}	\\
+	\\
+\fi
 	\Large{Thema erhalten am: \@receivedDate}	\\
 	\\
 	\Large{Abgabedatum: \@turninDate} \\
-	\vspace*{\fill}
 \end{tabular}
 \end{titlepage}
 }
